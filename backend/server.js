@@ -47,3 +47,12 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.use(
+  cors({
+    origin: [
+      'http://localhost:5173',
+      'https://shopkart-e.onrender.com',
+    ],
+    credentials: true,
+  })
+);
